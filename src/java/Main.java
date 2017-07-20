@@ -61,7 +61,7 @@ public class Main {
 
     // Main method with lots of user interface stuff
     public static void main(String[] args) throws Exception {
-        Data data = Data.fromFile("data.csv");
+        Data data = Data.fromFile("../../res/data.csv");
         double angle;
 
         Scanner reader = new Scanner(System.in);  // Reading from System.in
