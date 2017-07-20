@@ -85,7 +85,7 @@ public class Main {
             System.out.print("What angle would you like to scan [-90/-75/-60/-45/-30/-15/0/15/30/45/60/75/90] ");
             angle = reader.nextInt();
 
-            // Checks to see fi anything is invalid
+            // Checks to see if anything is invalid
             if (angle > 90 || angle % 15 != 0 || angle < -90) {
                 System.out.println("Invalid number, defaulting to 0");
                 angle = 0;
