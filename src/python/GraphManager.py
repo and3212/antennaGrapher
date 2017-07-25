@@ -1,5 +1,9 @@
 import matplotlib.pyplot as plt
 
+# Author: Liam Lawrence
+# Date: July 20, 2017
+# Graphs the data in polar that we pass to it
+
 def graph(theta, r, angle, offset, type):
     ax = plt.subplot(111, polar=True)
     ax.plot(theta, r, color='r', linewidth=3, label='Radiation Path')
