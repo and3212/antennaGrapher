@@ -64,11 +64,11 @@ def singleMenu():
 
 # Main method
 def startMenu():
-    response = input("Would you like to compare data [N/y] ")
+    response = input("Would you like to compare data [y/N] ")
     if response.lower() == "y":
-        singleMenu()
-    else:
         doubleMenu()
+    else:
+        singleMenu()
 
 # Runs the program
 startMenu()
