@@ -4,7 +4,7 @@ from GraphManager import graph
 from GraphManager import compare
 
 # Author: Liam Lawrence
-# Date: July 27, 2017
+# Date: July 20, 2017
 # Parses through data and generates graphs based off of it
 
 def elevationCompare(angle, data1, data2, offset):
