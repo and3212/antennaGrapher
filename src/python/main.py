@@ -1,5 +1,6 @@
 #!usr/bin/env python3
-from Parser import *
+import Parser as P
+from Data import Data
 
 # Variables that can be changed
 offset = 100
@@ -22,7 +23,7 @@ def doubleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the elevation
-        elevationCompare(angle, data1, data2, offset)
+        P.elevationCompare(angle, data1, data2, offset)
 
     # Parse an Azimuth from -90 to 90
     else:
@@ -33,7 +34,7 @@ def doubleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the azimuth
-        azimuthCompare(angle, data1, data2, offset)
+        P.azimuthCompare(angle, data1, data2, offset)
 
 def singleMenu():
     data = Data()
@@ -49,7 +50,7 @@ def singleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the elevation
-        elevationParser(angle, data, offset)
+        P.elevationParser(angle, data, offset)
 
     # Parse an Azimuth from -90 to 90
     else:
@@ -60,7 +61,7 @@ def singleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the azimuth
-        azimuthParser(angle, data, offset)
+        P.azimuthParser(angle, data, offset)
 
 # Main method
 def startMenu():
