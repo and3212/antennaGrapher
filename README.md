@@ -1,5 +1,3 @@
-# Author: Liam Lawrence
-# Date: July 31, 2017
 # Graphs polar charts from antenna data
 
 If you only want to look at data from one .csv file, name it "data.csv" and place it in the res/ folder.
