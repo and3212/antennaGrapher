@@ -5,10 +5,13 @@ import java.util.Scanner;
  * Takes our CSV data and graphs it in Polar Coordinates
  */
 
-public class Main {
+public class Main;
+    // Variables that can be changed
+    double offset = 100;
+    String filePath = "../../res/data.csv";
 
     // For elevation scans
-    static void elevationParser(double angle, Data data, double offset) {
+    static void elevationParser(double angle, Data data) {
         Data validData = new Data();
 
         // Lists out the data points your using
@@ -34,7 +37,7 @@ public class Main {
     }
 
     // For azimuth scans
-    static void azimuthParser(double angle, Data data, double offset) {
+    static void azimuthParser(double angle, Data data) {
         Data validData = new Data();
 
         // Lists out the data points your using
@@ -61,7 +64,7 @@ public class Main {
 
     // Main method with lots of user interface stuff
     public static void main(String[] args) throws Exception {
-        Data data = Data.fromFile("../../res/data.csv");
+        Data data = Data.fromFile(filePath);
         double angle;
 
         Scanner reader = new Scanner(System.in);  // Reading from System.in
