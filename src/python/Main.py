@@ -1,11 +1,15 @@
 #!usr/bin/env python3
+# Author: Liam Lawrence
+# Date: July 31, 2017
+# Graphs data from antennas
+
 import Parser as P
 from Data import Data
 
 # Variables that can be changed
-offset = 100
-filePath = "../../res/data.csv"
-compareFile = "../../res/data2.csv"
+offset = 100                            # Variable offset, good if you're working with -dBm
+filePath = "../../res/data.csv"         # The main data file
+compareFile = "../../res/data2.csv"     # The compared data file
 
 def doubleMenu():
     data1 = Data()
