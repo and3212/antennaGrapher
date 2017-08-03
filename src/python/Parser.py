@@ -7,7 +7,7 @@ from GraphManager import compare
 # Date: July 20, 2017
 # Parses through data and generates graphs based off of it
 
-def elevationCompare(angle, data1, data2, offset):
+def elevationCompare(angle, data1, data2, offset, name1, name2):
     validData1 = Data()
     validData2 = Data()
     print("Using the following data points")
@@ -27,9 +27,9 @@ def elevationCompare(angle, data1, data2, offset):
             validData2.azimuth.extend([float(data2.azimuth[i]) * np.pi / 180])
             print("|" + str(float(data2.power[i])) + " | " + str(float(data2.azimuth[i])) + " | " + str(float(data2.elevation[i])) + "|")
     print("----------------------")
-    compare(validData1.azimuth, validData2.azimuth, validData1.power, validData2.power, angle, offset, "Elevation")
+    compare(validData1.azimuth, validData2.azimuth, validData1.power, validData2.power, angle, offset, "Elevation", name1, name2)
 
-def elevationParser(angle, data, offset):
+def elevationParser(angle, data, offset, name):
     validData = Data()
     print("Using the following data points")
     print("| dBm | Azimuth | Elevation |")
@@ -42,9 +42,9 @@ def elevationParser(angle, data, offset):
             validData.azimuth.extend([float(data.azimuth[i]) * np.pi / 180])
             print("|" + str(float(data.power[i])) + " | " + str(float(data.azimuth[i])) + " | " + str(float(data.elevation[i])) + "|")
     print("----------------------")
-    graph(validData.azimuth, validData.power, angle, offset, "Elevation")
+    graph(validData.azimuth, validData.power, angle, offset, "Elevation", name)
 
-def azimuthCompare(angle, data1, data2, offset):
+def azimuthCompare(angle, data1, data2, offset, name1, name2):
     validData1 = Data()
     validData2 = Data()
     print("Using the following data points")
@@ -64,10 +64,10 @@ def azimuthCompare(angle, data1, data2, offset):
             validData2.elevation.extend([float(data2.elevation[i]) * np.pi / 180])
             print("|" + str(float(data2.power[i])) + " | " + str(float(data2.azimuth[i])) + " | " + str(float(data2.elevation[i])) + "|")
     print("----------------------")
-    compare(validData1.elevation, validData2.elevation, validData1.power, validData2.power, angle, offset, "Elevation")
+    compare(validData1.elevation, validData2.elevation, validData1.power, validData2.power, angle, offset, "Elevation", name1, name2)
 
 
-def azimuthParser(angle, data, offset):
+def azimuthParser(angle, data, offset, name):
     validData = Data()
     print("Using the following data points")
     print("| dBm | Azimuth | Elevation |")
@@ -80,4 +80,4 @@ def azimuthParser(angle, data, offset):
             validData.elevation.extend([float(data.elevation[i]) * np.pi / 180])
             print("|" + str(float(data.power[i])) + " | " + str(float(data.azimuth[i])) + " | " + str(float(data.elevation[i])) + "|")
     print("----------------------")
-    graph(validData.elevation, validData.power, angle, offset, "Azimuth")
+    graph(validData.elevation, validData.power, angle, offset, "Azimuth", name)

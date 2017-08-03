@@ -7,15 +7,19 @@ import Parser as P
 from Data import Data
 
 # Variables that can be changed
-offset = 100                            # Variable offset, good if you're working with -dBm
-filePath = "../../res/data.csv"         # The main data file
-compareFile = "../../res/data2.csv"     # The compared data file
+offset = 100                        # Variable offset, good if you're working with -dBm
+file1_Title = "Radiation Path"      # Title for the first file's data
+file2_Title = "Shielded Box"        # Title for the second file's data
+
+file1 = "../../res/data.csv"        # The main data file
+file2 = "../../res/data2.csv"       # The compared data file
+
 
 def doubleMenu():
     data1 = Data()
     data2 = Data()
-    data1 = data1.fromFile(filePath)
-    data2 = data2.fromFile(compareFile)
+    data1 = data1.fromFile(file1)
+    data2 = data2.fromFile(file2)
     response = input("Azimuth or Elevation scan [A/e] ")
 
     # Parse an Elevation from 0 - 75 degrees
@@ -27,7 +31,7 @@ def doubleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the elevation
-        P.elevationCompare(angle, data1, data2, offset)
+        P.elevationCompare(angle, data1, data2, offset, file1_Title, file2_Title)
 
     # Parse an Azimuth from -90 to 90
     else:
@@ -38,11 +42,11 @@ def doubleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the azimuth
-        P.azimuthCompare(angle, data1, data2, offset)
+        P.azimuthCompare(angle, data1, data2, offset, file1_Title, file2_Title)
 
 def singleMenu():
     data = Data()
-    data = data.fromFile(filePath)
+    data = data.fromFile(file1)
     response = input("Azimuth or Elevation scan [A/e] ")
 
     # Parse an Elevation from 0 - 75 degrees
@@ -54,7 +58,7 @@ def singleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the elevation
-        P.elevationParser(angle, data, offset)
+        P.elevationParser(angle, data, offset, file1_Title)
 
     # Parse an Azimuth from -90 to 90
     else:
@@ -65,7 +69,7 @@ def singleMenu():
             print("Invalid number, defaulting to 0")
             angle = 0
         # Parse the azimuth
-        P.azimuthParser(angle, data, offset)
+        P.azimuthParser(angle, data, offset, file1_Title)
 
 # Main method
 def startMenu():
